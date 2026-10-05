@@ -77,7 +77,7 @@ class Bird {
    * object is made. If there are more rows than Birds, these numbers may
    * desync.
    */
-  public static $count;
+  public static $count = 0;
 
 
   /*
@@ -164,6 +164,7 @@ class Bird {
     $this->wingspan_cm = $args['wingspan_cm'] ?? 0;
     $this->weight_g = $args['weight_g'] ?? 0;
     $this->conservation_id = $args['conservation_id'] ?? 1;
+    self::$count++;
   }
 
 
@@ -323,9 +324,12 @@ class Bird {
    * Also, I am using the <i> HTML tags. The <em> are non-semantic in this case --
    * <em> is used for *emphasis*, whereas <i> is for alternate forms of text like
    * scientific names.
+   * 
+   * h() in the birds code forces HTML tags to not render, however, so I'm using h()
+   * here instead.
    */
   public function display_name() {
-    return "{$this->common_name} (<i>{$this->scientific_name}</i>)";
+    return h($this->common_name) . ' (<i>' . h($this->scientific_name) . '</i>)';
   }
 
 
