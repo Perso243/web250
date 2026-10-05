@@ -80,10 +80,8 @@ if (!$parsed_array) {
  * here instead so the markup below stays readable.
  */
 $bird_array = [];
-$i = 0;
 foreach($parsed_array as $args) {
-  $bird_array[$i] = new Bird($args);
-  $i++;
+  array_push($bird_array, new Bird($args));
 }
 
 

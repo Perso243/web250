@@ -332,7 +332,24 @@ class Bird {
     return h($this->common_name) . ' (<i>' . h($this->scientific_name) . '</i>)';
   }
 
+  /* GO FURTHER - 3: Static Finder
+   * This array takes an array of birds and a given habitat and returns an
+   * array of birds that live in that habitat.
+   * It is static because it is a general method that is not tied to one
+   * specific bird object.
+   */
+  public static function find_by_habitat($birds, $habitat) {
+    $birds_filtered = [];
+    $habitat = strtolower($habitat);
+    foreach($birds as $bird) {
+      if (strtolower($bird['habitat']) == $habitat) {
+        array_push($birds_filtered, $bird);
+      }
+    }
+    return $birds_filtered;
+  }
 
+ 
 }
 
 ?>
