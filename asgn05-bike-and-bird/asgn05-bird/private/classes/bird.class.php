@@ -349,7 +349,21 @@ class Bird {
     return $birds_filtered;
   }
 
- 
+  /* GO FURTHER - 4: __toString()
+   * __toString, like all magic methods, is not called directly. Instead, it is called
+   * when an object (in this case, a Bird object) is coerced into a string. Most notably,
+   * it's called when you try to echo an object. This can be nice to override the 
+   * default behavior of, since it can be set up (as here) to print a user-readable
+   * summary of an objectn. I believe a dedicated display-type method would be better
+   * suited for something an end user might see, but this is good for debugging.
+   */
+  public function __toString() {
+    $out = "";
+    foreach($this as $key => $val) {
+      $out = $out . $key . ": " . $val . " | ";
+    }
+    return $out;
+  }
 }
 
 ?>

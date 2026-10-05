@@ -117,7 +117,8 @@ if ($data_error) {
  */
 echo "row_count = {$parser->row_count()} <br>";
 echo "static count = ". Bird::$count . "<br>";
-
+// go further 4 output
+echo "First bird = " . $bird_array[0];
 ?>
 
 <?php
