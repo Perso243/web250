@@ -183,7 +183,31 @@ class Bird {
    * why comment required: on set_wingspan_in(), explain why a setter named
    * for inches writes to a property measured in centimeters.
    */
+  
+  public function wingspan_cm() {
+    return number_format($this->wingspan_cm, 2) . ' cm';
+  }
+  
+  public function set_wingspan_cm($v) {
+    $this->wingspan_cm = floatval($v);
+  }
 
+  public function wingspan_in() {
+    $wingspan_in = floatval($this->wingspan_cm) * 0.393701;
+    return number_format($wingspan_in, 2) . ' in';
+  }
+
+  /* Comment
+   * This setter takes an input in inches. It writes to a property in cm
+   * because that is the unit which this project uses for the property.
+   * If, during the design stage, it was decided that wingspan would be
+   * measured in inches, that would be used instead. As-is, wingspan can
+   * be set in inches for convenience's sake, but it will still be stored
+   * as cm.
+   */
+  public function set_wingspan_in($v) {
+    $this->wingspan_cm = floatval($v) / 0.393701;
+  }
 
 
   /*
@@ -193,7 +217,24 @@ class Bird {
    * 1 g = 0.0352740 oz.
    */
 
+  // Note: on the pdf instructions, part 2.9 required methods,
+  // it doesn't list set_weight_g or set_weight_oz. I have decided
+  // to err on the side of caution and follow the TODO here instead.
+  public function weight_g() {
+    return number_format($this->weight_g, 2) . ' g';
+  }
+  public function set_weight_g($v) {
+    $this->weight_g = floatval($v);
+  }
 
+  public function weight_oz() {
+    $weight_oz = floatval($this->weight_g) * 0.0352740;
+    return number_format($weight_oz, 2) . ' oz';
+  }
+
+  public function set_weight_oz($v) {
+    $this->weight_g = floatval($v) / 0.0352740;
+  }
 
   /*
    * TODO 8 -- conservation()
@@ -210,6 +251,18 @@ class Bird {
    * why comment required: why self:: and not $this->?
    */
 
+  /* Comment
+   * Because CONSERVATION_OPTIONS is a constant, it will remain the same for
+   * every instance of this object. As such, there is no need to check $this
+   * object's instance of it; the 'generic' version for the object works fine.
+   */
+  public function conservation() {
+    if ($this->conservation_id < 1 || $this->conservation_id > 4) {
+      return 'Unknown';
+    } else {
+      return self::CONSERVATION_OPTIONS[$this->conservation_id];
+    }
+  }
 
 
   /*
@@ -224,6 +277,22 @@ class Bird {
    * your comment and say why they suit this data.
    */
 
+  /* Comment
+   * This function categorizes a Small wingspan as anything under 35 cm, a 
+   * Medium wingspan as between 35 and 75 cm, and a Large wingspan as anything
+   * 75 or above. I chose these numbers because the birds in the csv seem to
+   * fall into these sorts of groups. I see a lot of sizes in 20s-30s, a lot of
+   * numbers in 60s-70s, and then some more in the 100+ range.
+   */
+  public function size_class() {
+    if ($this->wingspan_cm < 35) {
+      return 'Small';
+    } elseif ($this->wingspan_cm < 75) {
+      return 'Medium';
+    } else {
+      return 'Large';
+    }
+  }
 
 
   /*
@@ -244,7 +313,20 @@ class Bird {
    *
    * why comment required: state which approach you chose and why.
    */
-
+  
+  /* Comment
+   * For this, I decided that the function here should own the markup. My 
+   * reasoning is that the purpose of this method is to display the information.
+   * The variables $common_name and $scientific_name already exist if those
+   * are needed specifically. This one is purely for user output.
+   * 
+   * Also, I am using the <i> HTML tags. The <em> are non-semantic in this case --
+   * <em> is used for *emphasis*, whereas <i> is for alternate forms of text like
+   * scientific names.
+   */
+  public function display_name() {
+    return "{$this->common_name} (<i>{$this->scientific_name}</i>)";
+  }
 
 
 }
