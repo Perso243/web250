@@ -30,7 +30,14 @@ If `reset()` could be called outside `ParseCSV`, it could very easily lead to si
 ## Git History
 Paste the output of:
 ```text
-git log --oneline --graph --all --decorate
+* 43275a7 (HEAD -> main, origin/main, origin/HEAD, asgn05-bird) asgn05-bird: Completed README.md questions.
+* bcd53c9 asgn05-bird: Completed go further option 4.
+* 18a46be asgn05-bird: Completed go further option 3.
+* ca54a09 asgn05-bird: Create table on birds.php
+* 5cf4bde asgn05-bird: Finished Bird class methods.
+* 0343088 asgn05-bird: Created Bird class variables and constructor.
+* 897a95e (asgn05-bike) asgn05-bike: Completed the assignment, using the LinkedIn learning course as a guide.
+* 5f32677 Updated .gitignore and made a readme for bikes and birds assignment.
 ```
 ## AI Log
 - Question asked: none
