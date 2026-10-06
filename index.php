@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEB-250 | My Course Work</title>
+</head>
+
+<body>
+  <header>
+    <h1>WEB-250 Assignments</h1>
+    <p>Created by Eli :)</p>
+  </header>
+
+  <main>
+    <?php
+      print '<p>Welcome to the HTMl and PHP world!</p>';
+    ?>
+
+    <nav aria-label="web-250-assignments">
+      <ul>
+        <li><a href="asgn01">Assignment 01</a></li>
+        <li><a href="asgn02-inheritance">Assignment 02</a></li>
+        <li><a href="asgn03-static">Assignment 03</a></li>
+        <li><a href="asgn04-constructors">Assignment 04</a></li>
+        <li><a href="asgn05-bike-and-bird">Assignment 05</a></li>
+      </ul>
+    </nav>
+  </main>
+</body>
+
+</html>
