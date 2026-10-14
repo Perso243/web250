@@ -4,15 +4,15 @@
 
 ## Local setup
 
-- Operating system and local server (Mac/MAMP or Windows/XAMPP): TODO
-- PHP version shown in the **browser's phpinfo**: TODO
-- Xdebug version: TODO
-- Active `php.ini` path (no secrets): TODO
-- Xdebug / VS Code port (recommended 9003): TODO
-- Local Apache port (our class uses 55000): TODO
-- Mac/MAMP FastCGI `-idle-timeout 600` configured? (Windows: N/A): TODO
-- Mac/MAMP 45-second breakpoint pause, Step Over, Continue test result (Windows: N/A): TODO
-- Local exercise index URL: TODO
+- Operating system and local server (Mac/MAMP or Windows/XAMPP): Windows/XAMPP
+- PHP version shown in the **browser's phpinfo**: 8.2.12
+- Xdebug version: 3.5.3
+- Active `php.ini` path (no secrets): C:\xampp\php\php.ini
+- Xdebug / VS Code port (recommended 9003): 9003
+- Local Apache port (our class uses 55000): 55000
+- Mac/MAMP FastCGI `-idle-timeout 600` configured? (Windows: N/A): N/A
+- Mac/MAMP 45-second breakpoint pause, Step Over, Continue test result (Windows: N/A): N/A
+- Local exercise index URL: http://localhost/web250/debugging_setup/sandbox/sandbox_breakpoints.php
 - Hosted exercise index URL: TODO
 
 ## Exercise 01 — Variables and Watch
