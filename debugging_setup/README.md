@@ -17,19 +17,19 @@
 
 ## Exercise 01 — Variables and Watch
 
-- Prediction for `$observations` before the `+=` line: TODO
-- Value before Step Over: TODO
-- Value after Step Over: TODO
-- What you learned about the breakpoint and Watch: TODO
-- Screenshot: `evidence/01_variables.png` — TODO caption
+- Prediction for `$observations` before the `+=` line: 3
+- Value before Step Over: 3
+- Value after Step Over: 5
+- What you learned about the breakpoint and Watch: The breakpoint paused the program *before* the given line. After using Step Over, the given line was activated, incrementing the watched variable.
+- Screenshot: `evidence/01_variables.png` — uploaded
 
 ## Exercise 02 — Loop and conditional breakpoint
 
-- Predicted total and average: TODO
-- `$total` after the first two iterations: TODO
-- Values seen when `$dayIndex === 2` (index, count, total): TODO
-- Why the conditional breakpoint helped: TODO
-- Screenshot: `evidence/02_conditional.png` — TODO caption
+- Predicted total and average: 10, 2.5
+- `$total` after the first two iterations: 6
+- Values seen when `$dayIndex === 2` (index, count, total): 2, 1, 6
+- Why the conditional breakpoint helped: The conditional breakpoint only fired once, instead of with every single loop. This would be helpful in larger and more complicated loops.
+- Screenshot: `evidence/02_conditional.png` — uploaded
 
 ## Exercise 03 — Step Into / Step Out / Call Stack
 
